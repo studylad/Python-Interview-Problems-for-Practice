@@ -1,7 +1,7 @@
 def preOrderTraversal(root):
     stack = []
     stack.insert(0, root)
-    while len(stack) > 0:
+    while stack:
         current = stack.pop()
         print(current.value)
 

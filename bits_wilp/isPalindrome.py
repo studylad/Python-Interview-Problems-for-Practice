@@ -1,16 +1,9 @@
 def isPalindrome(str):
-  result = False
-  
-  if str == str[::-1]:
-    result = True
-    
-  return result   
+  return str == str[::-1]   
 
 print("Please enter a string: ")
 x = input()
-flag = isPalindrome(x)
-
-if flag:
+if flag := isPalindrome(x):
   print(x, "is a Palindrome")
 else:
   print(x, "is NOT a Palindrome")

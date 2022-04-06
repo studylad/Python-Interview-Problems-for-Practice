@@ -14,10 +14,9 @@ def printLevelOrder(root):
     height = getHeight(root)
     if root is None:
         return
-    else:
-        # iteratively print all the levels
-        for i in range(1, height + 1):
-            printGivenLevel(root, i)
+    # iteratively print all the levels
+    for i in range(1, height + 1):
+        printGivenLevel(root, i)
 
 
 def printGivenLevel(root, level):
@@ -34,14 +33,10 @@ def printGivenLevel(root, level):
 def getHeight(root):
     if root is None:
         return 0
-    else:
-        lheight = getHeight(root.left)
-        rheight = getHeight(root.right)
+    lheight = getHeight(root.left)
+    rheight = getHeight(root.right)
 
-        if lheight > rheight:
-            return lheight + 1
-        else:
-            return rheight + 1
+    return lheight + 1 if lheight > rheight else rheight + 1
 
 
 root = Node(1)

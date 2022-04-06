@@ -38,26 +38,24 @@ class Heap(object):
 
             if leftChild <= upto:
                 childToSwap = 0
+            elif self.heap[leftChild] < self.heap[rightChild]:
+                childToSwap = leftChild
             else:
-                if self.heap[leftChild] < self.heap[rightChild]:
-                    childToSwap = leftChild
-                else:
-                    childToSwap = rightChild
+                childToSwap = rightChild
 
-            if self.heap[index] < self.heap[childToSwap]:
-                temp = self.heap[index]
-                self.heap[index] = self.heap[childToSwap]
-                self.heap[childToSwap] = temp
-            else:
+            if self.heap[index] >= self.heap[childToSwap]:
                 break
 
+            temp = self.heap[index]
+            self.heap[index] = self.heap[childToSwap]
+            self.heap[childToSwap] = temp
             index = childToSwap
 
         else:
             return
 
     def heapSort(self):
-        for i in range(0, self.currentPosition + 1):
+        for i in range(self.currentPosition + 1):
             temp = self.heap[0]
             print("%d" % temp)
             self.heap[0] = self.heap[self.currentPosition - i]

@@ -5,11 +5,11 @@ def bubbleSort(arr):
   for i in range(len(arr)):
     
     # last i elements are already in place
-    for j in range(0, len(arr)-i-1):
-      
+    for j in range(len(arr)-i-1):
+
       if arr[j] > arr[j+1]:
         arr[j], arr[j+1] = arr[j+1], arr[j]
-  
+
   return arr
 
 # Approach 2: This algorithm will run for O(n^2) even if the array is
@@ -21,17 +21,17 @@ def bubbleSort(arr):
 def bubbleSortOptimized(arr):
   for i in range(len(arr)):
     swapped = False
-    
-    for j in range(0, len(arr)-i-1):
-      
+
+    for j in range(len(arr)-i-1):
+
       if arr[j] > arr[j+1]:
         arr[j], arr[j+1] = arr[j+1], arr[j]
         swapped = True
-    
+
     # if no elements are swapped, break the loop
     if swapped == False:
       break
-  
+
   return arr
 
 if __name__ = "__main__":

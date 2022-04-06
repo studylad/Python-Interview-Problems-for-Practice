@@ -5,12 +5,11 @@ from math import log10
 
 def get_digits(n):
     if n > 0:
-        digits = int(log10(n)) + 1
+        return int(log10(n)) + 1
     elif n == 0:
-        digits = 1
+        return 1
     else:
-        digits = int(log10(-n)) + 2
-    return digits
+        return int(log10(-n)) + 2
 
 
 def karatsuba(x, y):
@@ -41,7 +40,7 @@ def karatsuba(x, y):
 
 
 def test():
-    for i in range(1000):
+    for _ in range(1000):
         x = random.randint(1, 10 ** 5)
         y = random.randint(1, 10 ** 5)
         expected = x * y

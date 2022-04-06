@@ -31,7 +31,7 @@ for i in range(int(ONE), HUNDRED+1):
 # is equal to a byte.
 
 ONE = str(ord('b') - ord('a'))
-ZERO = str(ord('a') - ord('a'))
+ZERO = str(0)
 HUNDRED  = int(ONE + ZERO + ZERO)
 
 for i in range(int(ONE), HUNDRED+1):

@@ -4,11 +4,8 @@
 # Constraints: in O(m+n) complexity.
 
 def unionArrays(x, y, m, n):
-  union_arr = []
+  union_arr = [x[i] for i in range(m)]
 
-  for i in range(m):
-    union_arr.append(x[i])
-  
   for j in range(n):
     if y[j] not in union_arr:
       union_arr.append(y[j])

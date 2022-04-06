@@ -8,13 +8,10 @@ def rotate_by_90(m):
 
 
 def makeMatrix(array, size):
-    # validating size of matrix for given array
     if size ** 2 != len(array):
         return -1
-    # make sub array of length size using array slicing
-    else:
-        matrix = [array[i : i + size] for i in range(0, len(array), size)]
-        return rotate_by_90(matrix)
+    matrix = [array[i : i + size] for i in range(0, len(array), size)]
+    return rotate_by_90(matrix)
 
 
 arr = [1, 2, 3, 4]

@@ -11,11 +11,11 @@ def getIndexMap(arr):
   indexMap = {}
 
   for i in range(len(arr)):
-    if arr[i] not in indexMap.keys():
-      indexMap[arr[i]] = [i,]
-    else:
+    if arr[i] in indexMap:
       indexMap[arr[i]].append(i)
-  
+
+    else:
+      indexMap[arr[i]] = [i,]
   return indexMap
 
 # This method will create the sum prefix of the 
@@ -26,11 +26,7 @@ def hasZeroSum(arr):
   prefixArr = getPrefixArray(arr)
   sumAtIndexMap = getIndexMap(prefixArr)
 
-  for v in sumAtIndexMap.values():
-    if len(v) > 1:
-      return True
-      break
-  return False    
+  return any(len(v) > 1 for v in sumAtIndexMap.values())    
 
 
 ipArray = [1, 4, -2, -2, 5, -4, 3]

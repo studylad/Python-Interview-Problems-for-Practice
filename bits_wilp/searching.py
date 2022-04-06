@@ -4,7 +4,7 @@
 # and binary search techniques.
 
 def linear_search(arr, elem):
-  for i in range(0,len(arr)):
+  for i in range(len(arr)):
     if arr[i] == elem:
       print("{elem} found at {index} !".format(elem=elem, index=i))
       return
@@ -27,8 +27,12 @@ def binary_search(arr, elem, l, r):
     print(e)
 
 
-arr = list(map(int, input("Enter numbers seperated by space. Press ENTER to exit: ").split()))
-arr.sort()
+arr = sorted(
+    map(
+        int,
+        input(
+            "Enter numbers seperated by space. Press ENTER to exit: ").split(),
+    ))
 print("Given sequence is :")
 print(arr)
 

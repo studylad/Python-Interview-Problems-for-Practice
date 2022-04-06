@@ -1,20 +1,15 @@
 def isAngstrom(n):
-  result = False
   sum = 0
   order = len(n)
 
   for i in n:
     sum = sum + int(i)**order
 
-  if sum == int(n):
-    result = True
-  return result   
+  return sum == int(n)   
 
 print("Please enter a number: ")
 num = input()
-flag = isAngstrom(num)
-
-if flag:
+if flag := isAngstrom(num):
   print(num, "is an Angstrom number")
 else:
   print(num, "is NOT an Angstrom number")

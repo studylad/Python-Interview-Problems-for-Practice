@@ -7,9 +7,7 @@
 from itertools import permutations
 
 def generate_largest_number(arr):
-  gen_nums = []
-  for i in permutations(arr, len(arr)):
-    gen_nums.append("".join(map(str, i)))
+  gen_nums = ["".join(map(str, i)) for i in permutations(arr, len(arr))]
   return max(gen_nums)
 
 arr = [54, 546, 548, 60]

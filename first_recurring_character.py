@@ -4,9 +4,9 @@
 
 def first_recurring_character(input):
     flag = None
-    d = dict()
+    d = {}
     for char in input:
-        if char in d.keys():
+        if char in d:
             flag = char
             return flag
         d[char] = 1

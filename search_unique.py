@@ -12,21 +12,17 @@ def searchUnique(arr, low, high):
         return arr[low]
     # Find the middle element
     mid = low + (high - low) // 2
-    # if the middle element lies at even place,
-    # check i and i+1, if they are same, go to right else left
-    if mid % 2 == 0:
-        if arr[mid] == arr[mid + 1]:
-            return searchUnique(arr, mid + 2, high)
-        else:
-            return searchUnique(arr, low, mid)
-    # if the middle element lies at odd place,
-    # check i-1 and i, if they are same, go to right else left
-    # Replace mid by mid-1 for above block
+    if mid % 2 != 0:
+        return (
+            searchUnique(arr, mid + 1, high)
+            if arr[mid - 1] == arr[mid]
+            else searchUnique(arr, low, mid - 1)
+        )
+
+    if arr[mid] == arr[mid + 1]:
+        return searchUnique(arr, mid + 2, high)
     else:
-        if arr[mid - 1] == arr[mid]:
-            return searchUnique(arr, mid + 1, high)
-        else:
-            return searchUnique(arr, low, mid - 1)
+        return searchUnique(arr, low, mid)
 
 
 array = [1, 1, 2, 4, 4, 5, 5, 6, 6]

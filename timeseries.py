@@ -7,29 +7,22 @@ import pandas as pd
 def get_merged(series1, series2):
     merged = []
     temp = {}
-    
+
     for i in series1:
-        if i[0] not in temp.keys():
-            temp[i[0]] = i[1]
-        else:
+        if i[0] in temp:
             curr = temp.get(i[0])
             temp[i[0]] = (curr + i[1]) / 2
 
+        else:
+            temp[i[0]] = i[1]
     for i in series2:
-        if i[0] not in temp.keys():
-            temp[i[0]] = i[1]
-        else:
+        if i[0] in temp:
             curr = temp.get(i[0])
             temp[i[0]] = (curr + i[1]) / 2
 
-    #print(temp)
-    ordered = sorted(temp.items(), key=temp.items[1], reverse=False)
-    #print(ordered)
-
-    #for k,v in ordered.items():
-     #   merged.append((k,v))
-    
-    return ordered
+        else:
+            temp[i[0]] = i[1]
+    return sorted(temp.items(), key=temp.items[1], reverse=False)
         
 # timeseries data
 series1 = [
