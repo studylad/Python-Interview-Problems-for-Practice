@@ -6,11 +6,7 @@
 
 
 def removeChars(main_string, remove_string):
-    result = ""
-    for char in main_string:
-        if char not in remove_string:
-            result += char
-    return result
+    return "".join(char for char in main_string if char not in remove_string)
 
 
 given_input = "Battle of the Vowels: Hawaii vs. Grozny"

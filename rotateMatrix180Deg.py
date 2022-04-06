@@ -1,27 +1,25 @@
 def rotateMatrixby90(ipMat, size):
-  opMat = [[0 for i in range(size)] for j in range(size)]
+  opMat = [[0 for _ in range(size)] for _ in range(size)]
 
   for i in range(size):
     for j in range(size):
       opMat[j][i] = ipMat[i][j]
-  
+
   return opMat
 
 def reverseMatrix(ipMat, size):
-  opMat = [[0 for i in range(size)] for j in range(size)]
+  opMat = [[0 for _ in range(size)] for _ in range(size)]
   for i in range(size):
     for j in range(size):
       opMat[abs(i-(size-1))][j] = ipMat[i][j]
-  
+
   return opMat
 
 def rotateMatrixby180(ipMat, size):
   mat_1 = rotateMatrixby90(ipMat, size)
   mat_2 = reverseMatrix(mat_1, len(mat_1))
   mat_3 = rotateMatrixby90(mat_2, len(mat_2))
-  mat_4 = reverseMatrix(mat_3, len(mat_3))
-
-  return mat_4
+  return reverseMatrix(mat_3, len(mat_3))
 
 def printMatrix(ipMat, size):
   for i in range(size):

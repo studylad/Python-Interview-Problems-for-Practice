@@ -10,7 +10,7 @@
 def calculate_span(stock_quotes, span):
     # span for the first quote will always be 1
     span[0] = 1
-    for i in range(1, len(stock_quotes), 1):
+    for i in range(1, len(stock_quotes)):
         # initialize span value to be 1 for each ith quote
         span[i] = 1
         # scan for all the quotes to the left
@@ -18,7 +18,7 @@ def calculate_span(stock_quotes, span):
         # if the preceeding quote has a value less than or equal to current quote
         # increase the span value of the current quote
         while j >= 0 and stock_quotes[i] >= stock_quotes[j]:
-            span[i] = span[i] + 1
+            span[i] += 1
             j = j - 1
     return span
 

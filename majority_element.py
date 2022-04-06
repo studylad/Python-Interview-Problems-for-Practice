@@ -17,7 +17,7 @@ def findMajorityElement(elements, N, found=False):
 def mapFrequency(arr):
     FREQUENCY = {}
     for i in arr:
-        if i in FREQUENCY.keys():
+        if i in FREQUENCY:
             FREQUENCY[i] += 1
         else:
             FREQUENCY[i] = 0

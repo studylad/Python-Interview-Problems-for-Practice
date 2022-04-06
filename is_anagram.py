@@ -2,14 +2,14 @@
 
 
 def anagramise(word):
-    d = dict()
+    d = {}
 
     for char in word:
-        if char not in d.keys():
-            d[char] = 1
-        else:
+        if char in d:
             d[char] += 1
 
+        else:
+            d[char] = 1
     return d
 
 

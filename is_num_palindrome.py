@@ -9,7 +9,7 @@ def is_num_palindrome(num):
   while j > i:
     print(temp[i], temp[j])
     if temp[i] == temp[j]:
-      i = i + 1
+      i += 1
       j = j - 1
     else:
       return False

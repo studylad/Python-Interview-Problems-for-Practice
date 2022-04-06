@@ -24,11 +24,7 @@ def UsernameValidation(strParam):
   # contains only letters, numbers and underscore
   valid_grammar = set('abcdefghijklmnopqrstuvwxyz0123456789_')
 
-  for ch in strParam:
-    if ch.lower() not in valid_grammar:
-      return False;
-
-  return True
+  return all(ch.lower() in valid_grammar for ch in strParam)
 
 # keep this function call here
 TC1 = "aa_"

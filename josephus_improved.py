@@ -12,7 +12,7 @@ def josephus_v2(people, step=2):
         p = 1
         # the loop runs for O(floor(logN)) time
         while p * 2 < N:
-            p = p * 2
+            p *= 2
         # If N is a power of 2, should return 1. So let's check if L (N-p) is < p
         if N - p >= p:
             print(1)
@@ -21,5 +21,5 @@ def josephus_v2(people, step=2):
 
 
 num = int(input("Enter the number of soldiers: "))
-soldiers = [i for i in range(1, num + 1)]  # generates a list of 1..num
+soldiers = list(range(1, num + 1))
 josephus_v2(soldiers)

@@ -10,16 +10,14 @@ class Node:
 
 
 def printSingleNode(root, hasSibling):
-    # hasSibling will check if root has both children
     if root is None:
         return
-    else:
-        # if root has one child, print that child data
-        if not hasSibling:
-            print("%d" % root.data)
+    # if root has one child, print that child data
+    if not hasSibling:
+        print("%d" % root.data)
 
-        printSingleNode(root.left, root.right is not None)
-        printSingleNode(root.right, root.left is not None)
+    printSingleNode(root.left, root.right is not None)
+    printSingleNode(root.right, root.left is not None)
 
 
 root = Node(1)

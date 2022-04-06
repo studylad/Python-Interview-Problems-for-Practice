@@ -3,11 +3,11 @@ def calculateFrequency(str):
   freq = {}
 
   for i in nums:
-    if i not in freq.keys():
-      freq[i] = 1
-    else:
+    if i in freq:
       freq[i] += 1
 
+    else:
+      freq[i] = 1
   print(freq)
 
 

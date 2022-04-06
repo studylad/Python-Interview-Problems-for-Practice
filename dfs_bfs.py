@@ -62,13 +62,14 @@ def dfs_paths(graph, start, goal):
 
 
 graph = {
-    "A": set(["B", "C"]),
-    "B": set(["A", "D", "E"]),
-    "C": set(["A", "F"]),
-    "D": set(["B"]),
-    "E": set(["B", "F"]),
-    "F": set(["C", "E"]),
+    "A": {"B", "C"},
+    "B": {"A", "D", "E"},
+    "C": {"A", "F"},
+    "D": {"B"},
+    "E": {"B", "F"},
+    "F": {"C", "E"},
 }
+
 
 result = list(dfs_paths(graph, "A", "F"))  # [['A', 'C', 'F'], ['A', 'B', 'E', 'F']]
 print(result)

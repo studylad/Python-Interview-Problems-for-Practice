@@ -22,7 +22,7 @@ def computeProductArray(array, size):
     # equivalent to (j=size-2; j>=0; j--)
     for j in range(size - 2, -1, -1):
         right[j] = array[j + 1] * right[j + 1]
-    for k in range(0, size):
+    for k in range(size):
         prod[k] = left[k] * right[k]
     print(prod)
 

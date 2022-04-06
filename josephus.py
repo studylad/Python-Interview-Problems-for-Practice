@@ -19,5 +19,5 @@ def josephus(people, step=2):
 
 
 num = int(input("Enter the number of soldiers:  "))
-soldiers = [i for i in range(1, num + 1)]  # generates a list of 1..num
+soldiers = list(range(1, num + 1))
 josephus(soldiers)

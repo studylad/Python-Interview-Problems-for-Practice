@@ -7,11 +7,11 @@ print(result) # {N}
 def get_freq(str):
   freq_dict = {}
   for char in str.split():
-    if char not in freq_dict.keys():
-      freq_dict[char] = 1
-    else:
+    if char in freq_dict:
       freq_dict[char] += 1
-      
+
+    else:
+      freq_dict[char] = 1
   return freq_dict
 
 result = get_freq("Amogh loves to eat apple and mango. His sister also loves eating apple and mango")
@@ -21,13 +21,7 @@ print(result)
 
 
 def is_prime(num):
-  flag = 1
-
-  for i in range(2, num//2):
-    if num % i == 0:
-      flag = 0
-      break
-
+  flag = next((0 for i in range(2, num//2) if num % i == 0), 1)
   if flag == 0:
     print(f"{num} is not prime...")
   else:
@@ -38,7 +32,7 @@ is_prime(7919) # 7919 is prime
 
 def fibo_iter(n_terms):
   first, second = 0, 1
-  for i in range(0, n_terms):
+  for i in range(n_terms):
     if i <= 1:
       result = i
     else:
@@ -58,5 +52,5 @@ def fibo_recur(n):
     return fibo_recur(n-1) + fibo_recur(n-2)
 
 
-for i in range(0, 10):
+for i in range(10):
   print(fibo_recur(i), end=' ') # 0 1 1 2 3 5 8 13 21 34

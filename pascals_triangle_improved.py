@@ -3,10 +3,7 @@
 
 
 def factorial(n):
-    if n < 2:
-        return 1
-    else:
-        return n * factorial(n - 1)
+    return 1 if n < 2 else n * factorial(n - 1)
 
 
 def computeCoefficient(col, row):
@@ -15,17 +12,14 @@ def computeCoefficient(col, row):
 
 # Recusrive method to create the series
 def computePascal(col, row):
-    if col == row or col == 0:
-        return 1
-    else:
-        return computeCoefficient(col, row)
+    return 1 if col in [row, 0] else computeCoefficient(col, row)
 
 
 # Method to create the triangle for `N` row
 def printTriangle(num):
     for r in range(num):
         for c in range(r + 1):
-            print(str(computePascal(c, r)), end=" ")
+            print(computePascal(c, r), end=" ")
         print("\n")
 
 

@@ -6,7 +6,7 @@ def josephus_v3(soldiers):
     # Convert to binary.
     binary = bin(soldiers)
     # Get the first digit and put it as last.
-    shift = "0b" + binary[3::] + binary[2:3:]
+    shift = f"0b{binary[3::]}{binary[2:3:]}"
     # Convert to decimal.
     return int(shift, 2)
 

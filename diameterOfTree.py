@@ -28,23 +28,19 @@ class Node(object):
     self.right = None
 
 def height(tree):
-  if tree is None:
-    return 0
-  else:
-    return 1 + max(height(tree.left), height(tree.right))
+  return 0 if tree is None else 1 + max(height(tree.left), height(tree.right))
 
 def diameter(tree):
   if tree is None:
     return 0
 
-  else:
-    lheight = height(tree.left)
-    rheight = height(tree.right)
+  lheight = height(tree.left)
+  rheight = height(tree.right)
 
-    ldiameter = diameter(tree.left)
-    rdiameter = diameter(tree.right)
+  ldiameter = diameter(tree.left)
+  rdiameter = diameter(tree.right)
 
-    return max(rheight + lheight + 1, max(ldiameter, rdiameter))
+  return max(rheight + lheight + 1, max(ldiameter, rdiameter))
 
 root = Node(1) 
 root.left = Node(2) 

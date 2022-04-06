@@ -1,8 +1,5 @@
 def factorial(n):
-  if n < 2:
-    return 1
-  else:
-    return n * factorial(n-1)
+  return 1 if n < 2 else n * factorial(n-1)
 
 
 n = int(input("Enter the value of n: "))

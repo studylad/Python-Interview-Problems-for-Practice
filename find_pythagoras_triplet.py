@@ -4,9 +4,9 @@
 
 def findPythagorasTriplet(arr, n):
   # convert the array to squares
-  for i in range(0, n):
+  for i in range(n):
     arr[i] = arr[i] * arr[i]
-  
+
   # sort the array
   arr.sort()
 
@@ -16,14 +16,12 @@ def findPythagorasTriplet(arr, n):
     k = i-1
 
     while (j < k):
-      # a pair is found
       if (arr[j] + arr[k]) == arr[i]:
         return True
+      if (arr[j] + arr[k]) < arr[i]:
+        j += 1
       else:
-        if (arr[j] + arr[k]) < arr[i]:
-          j = j + 1
-        else:
-          k = k - 1
+        k = k - 1
 
   return False
 

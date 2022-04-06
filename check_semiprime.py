@@ -19,7 +19,7 @@ def isSemiprime(num):
         # increment count, else move to new prime
         if not (num % prime):
             num = num / prime
-            count = count + 1
+            count += 1
         else:
             prime = prime + 1
     # if count is two, given number is a semiprime

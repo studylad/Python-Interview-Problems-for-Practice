@@ -6,19 +6,19 @@
 
 def adjacentElementProductBF(inputArray):
 	largestProduct = -999999
-	
+
 	# for sanity check, assert if array contains at least 2 elements
 	if len(inputArray) < 2:
 		print("No pairs exists")
 		return -1
-	
-	for i in range(0, len(inputArray)):
+
+	for i in range(len(inputArray)):
 		for j in range(i+1, len(inputArray)):
 			currentProduct = inputArray[i]*inputArray[j]
-			
+
 			if currentProduct > largestProduct:
 				largestProduct = currentProduct
-	
+
 	return largestProduct
 
 # Approach 2: (Sort & Pick Last Pair) - Sort the list and then pick the last two numbers
@@ -38,7 +38,7 @@ def adjacentElementsProductSort(inputArray):
 
 def adjacentElementsProduct(inputArray):	
 
-	length = int(len(inputArray))
+	length = len(inputArray)
 
 	maxm = inputArray[0]*inputArray[1]
 	product = 1

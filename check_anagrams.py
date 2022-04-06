@@ -27,11 +27,7 @@ def mapLettersToHash(text_a):
 # This method will count the letters present in 'text_b', also found in 'text_a'
 # These will be charcaters whose frequency in HASH is greater than zero
 def computeCommonLetters(text_b):
-    common_letters = 0
-    for char in text_b:
-        if CHARACTER_HASH[char] > 0:
-            common_letters += 1
-    return common_letters
+    return sum(CHARACTER_HASH[char] > 0 for char in text_b)
 
 
 # Now we derive how many uncommon letters are present,

@@ -3,10 +3,7 @@
 
 def recur_sum(arr, i):
   #print(arr[i])
-  if i < 1:
-    return arr[i]
-  else:
-    return arr[i] + recur_sum(arr, i-1)
+  return arr[i] if i < 1 else arr[i] + recur_sum(arr, i-1)
 
 
 arr = [-1, 2, -3, 4, 5]

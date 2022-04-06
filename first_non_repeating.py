@@ -6,21 +6,14 @@
 
 
 def first_non_repeating(input_string):
-    frequency = dict()
-    flag = None
-
+    frequency = {}
     for char in input_string:
-        if char in frequency.keys():
+        if char in frequency:
             frequency[char] += 1
         else:
             frequency[char] = 0
 
-    for char in input_string:
-        if frequency[char] == 0:
-            flag = char
-            break
-
-    return flag
+    return next((char for char in input_string if frequency[char] == 0), None)
 
 
 # lesser time complexity
@@ -28,7 +21,6 @@ def first_non_repeating(input_string):
 # obvious space-time trade-off
 def first_non_repeating_v2(input_string):
 
-    flag = None
     repeating = []
     non_repeating = []
 
@@ -39,12 +31,7 @@ def first_non_repeating_v2(input_string):
         else:
             non_repeating.append(char)
 
-    if len(non_repeating) == 0:
-        pass
-    else:
-        flag = non_repeating[0]
-
-    return flag
+    return non_repeating[0] if non_repeating else None
 
 
 result = first_non_repeating("djebdedbekfrnkfnduwbdwkd")

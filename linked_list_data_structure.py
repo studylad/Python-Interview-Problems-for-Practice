@@ -9,7 +9,7 @@ class LinkedList:
         self.head = head
 
     def isEmpty(self):
-        return self.head == None
+        return self.head is None
 
     def insert(self, data):
         # create a temp node
@@ -22,8 +22,6 @@ class LinkedList:
     def insert_after(self, prev, data):
         if prev is None:
             raise ValueError("Given node is not found...")
-            return prev
-
         # create a temp node
         temp = Node(data=data)
         # set next node of temp to the next node of previous

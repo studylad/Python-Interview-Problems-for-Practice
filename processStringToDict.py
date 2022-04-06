@@ -2,7 +2,7 @@
 
 StringToProcess = "k:1 |k1:2|k2:3|k3:4" 
 
-d2 = dict()
+d2 = {}
 keyvalue_list = StringToProcess.split('|') # ['k:1' , 'k1:2' , 'k2:3' ,'k3:4']
 
 for keyval in keyvalue_list:

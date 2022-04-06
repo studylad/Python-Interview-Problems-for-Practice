@@ -19,19 +19,15 @@ def nodesWithinRange(root, range):
     # this is the base case
     if root is None:
         return 0
-    # optional: to improve efficiency
-    elif root.data == high or root.data == low:
+    elif root.data in [high, low]:
         return 1
-    # if the current node lies in the range
     elif root.data <= high and root.data >= low:
         return (
             1 + nodesWithinRange(root.left, range) + nodesWithinRange(root.right, range)
         )
-    # if the current node lies in left subtree
     elif root.data > high:
         return nodesWithinRange(root.left, range)
-    # if the current node lies in the right subtree
-    elif root.data < low:
+    else:
         return nodesWithinRange(root.right, range)
 
 if __name__ == "main":
